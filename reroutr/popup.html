@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>reroutr Popup</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            width: 300px;
+            margin: 0.5em;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        ul {
+            padding-left: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        button {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>reroutr</h2>
+    <form id="addRuleForm">
+        <label>
+            From:
+            <input type="text" id="fromInput" required placeholder="e.g. facebook.com">
+        </label>
+        <label>
+            To:
+            <input type="text" id="toInput" required placeholder="e.g. wikipedia.org">
+        </label>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="rulesList"></ul>
+    <script src="popup.js"></script>
+</body>
+
+</html>
