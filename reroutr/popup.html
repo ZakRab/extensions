@@ -6,45 +6,138 @@
     <title>reroutr Popup</title>
     <style>
         body {
-            font-family: sans-serif;
-            width: 300px;
-            margin: 0.5em;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            width: 320px;
+            margin: 0;
+            background: #f7f8fa;
         }
 
-        label,
-        input {
-            display: block;
-            margin-bottom: 0.5em;
+        .container {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+            margin: 16px;
+            padding: 18px 16px 12px 16px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .header img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin: 0;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        form {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.97em;
+            color: #4a5568;
+            margin-bottom: 2px;
+        }
+
+        input[type="text"] {
+            padding: 6px 8px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1em;
+            background: #f9fafb;
+            margin-bottom: 2px;
+        }
+
+        button[type="submit"] {
+            background: #3182ce;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 7px 0;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 4px;
+            transition: background 0.2s;
+        }
+
+        button[type="submit"]:hover {
+            background: #2563eb;
         }
 
         ul {
-            padding-left: 1em;
+            padding-left: 0;
+            margin: 0;
+            list-style: none;
         }
 
         li {
-            margin-bottom: 0.5em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f1f5f9;
+            border-radius: 6px;
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            font-size: 0.98em;
         }
 
-        button {
-            margin-left: 1em;
+        .delete-btn {
+            background: #e53e3e;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 3px 10px;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .delete-btn:hover {
+            background: #b91c1c;
+        }
+
+        @media (max-width: 350px) {
+            .container {
+                margin: 4px;
+                padding: 8px;
+            }
+
+            body {
+                width: 100vw;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h2>reroutr</h2>
-    <form id="addRuleForm">
-        <label>
-            From:
+    <div class="container">
+        <div class="header">
+            <img src="icon48.png" alt="reroutr icon">
+            <h2>reroutr</h2>
+        </div>
+        <form id="addRuleForm">
+            <label for="fromInput">From:</label>
             <input type="text" id="fromInput" required placeholder="e.g. facebook.com">
-        </label>
-        <label>
-            To:
+            <label for="toInput">To:</label>
             <input type="text" id="toInput" required placeholder="e.g. wikipedia.org">
-        </label>
-        <button type="submit">Add</button>
-    </form>
-    <ul id="rulesList"></ul>
+            <button type="submit">Add</button>
+        </form>
+        <ul id="rulesList"></ul>
+    </div>
     <script src="popup.js"></script>
 </body>
 
