@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>reroutr Options</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 400px;
+            margin: 2em auto;
+        }
+
+        label,
+        input {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        ul {
+            padding-left: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        button {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>reroutr Options</h1>
+    <form id="addRuleForm">
+        <label>
+            From (domain):
+            <input type="text" id="fromInput" required placeholder="e.g. facebook.com">
+        </label>
+        <label>
+            To (domain):
+            <input type="text" id="toInput" required placeholder="e.g. wikipedia.org">
+        </label>
+        <button type="submit">Add Rule</button>
+    </form>
+    <h2>Current Rules</h2>
+    <ul id="rulesList"></ul>
+    <script src="options.js"></script>
+</body>
+
+</html>
