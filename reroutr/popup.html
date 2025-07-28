@@ -1,25 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" style="width:320px;min-width:320px;">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <title>Reroutr Popup</title>
     <style>
-        html,
         body {
-            width: 320px !important;
-            min-width: 320px !important;
+            font-family: 'Segoe UI', Arial, sans-serif;
             background: #f7f8fa;
             margin: 0;
             padding: 0;
         }
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f7f8fa;
-        }
-
-        .container {
+        #popup-root {
+            width: 320px;
+            min-width: 320px;
             background: #fff;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
@@ -118,22 +113,18 @@
         }
 
         @media (max-width: 350px) {
-            .container {
+            #popup-root {
                 margin: 4px;
                 padding: 8px;
-            }
-
-            html,
-            body {
-                width: 100vw !important;
-                min-width: 0 !important;
+                width: 100vw;
+                min-width: 0;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div id="popup-root">
         <div class="header">
             <img src="icon48.png" alt="reroutr icon">
             <h2>reroutr</h2>
