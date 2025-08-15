@@ -2,7 +2,10 @@
 
 // Helper to update dynamic redirect rules for declarativeNetRequest
 async function updateRedirectRules(rules) {
-  const removeRuleIds = rules.map((_, i) => i + 1);
+  // First, get all existing dynamic rules and remove them
+  const existingRules = await chrome.declarativeNetRequest.getDynamicRules();
+  const removeRuleIds = existingRules.map((rule) => rule.id);
+
   await chrome.declarativeNetRequest.updateDynamicRules({
     removeRuleIds,
     addRules: rules.map((rule, idx) => ({
